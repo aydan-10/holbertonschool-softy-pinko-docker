@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Softy Pinko</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Softy Pinko App</h1>
+    <div id="dynamic-content">Loading...</div>
+    
+    <script>
+        $(function() {
+            $.ajax({
+                type: "GET",
+                url: "/api/hello",
+                success: function (data) {
+                    console.log(data);
+                    $('#dynamic-content').text(data);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
